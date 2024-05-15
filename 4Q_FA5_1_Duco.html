@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structures</title>
+</head>
+<body>
+<input type="text" id="inputNumber" placeholder="Please enter a number">
+<button onclick="createShape()" class="button"> Generate a Shape</button>
+<div id="shapeContainer"></div>
+
+<script>
+
+function Number(value){
+    return isNaN(value) && value.trim() !== ""
+} 
+
+function NumberInput(){
+    const number=document.getElementById("inputNumber").value;
+    if(Number(value)){
+        return parseInt(input,10);
+    }
+
+    else{
+        alert("Please enter a valid number.");
+        return null;
+    }
+
+}
+
+function createShape(){
+    const inputtedNumber=NumberInput();
+    if (inputtedNumber!==null){
+        const shapeContainer = document.getElementById("shapeContainer");
+        let shape= "Number inputted: ${number}\n\n";
+
+        if(inputtedNumber%2 == 1){
+            for(let x=inputtedNumber; x>0; x--){
+                shape += Array(inputtedNumber).fill(x).join(" ") +"\n";
+            }
+        }
+
+        else {  
+              for (let x=inputtedNumber; x>0; x--) {
+                   shape += Array(x).fill(x).join(" ") + "\n";
+               }
+
+         }
+
+         shapeContainer.textContent=shape;
+
+        }
+
+         
+}
+
+ 
+</script>
+</body>
+</html>

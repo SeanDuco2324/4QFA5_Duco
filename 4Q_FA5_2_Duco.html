@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    
+    <input type="text" id="contactInput" placeholder="Enter contact name">
+    <button onclick="addContact()" class="button">Add</button>
+    <button onclick="removeContact()" class="button">Remove</button>
+    <div id="contactList"></div>
+
+    <script>
+        let contacts = [];
+
+        function contactDisplay() {
+            const ContactList = document.getElementById('contactList');
+            ContactList.textContent = Contacts.join(', ');
+        }
+
+        function addContact() {
+            const ContactInput = document.getElementById('contactInput');
+            const ContactName = ContactInput.value.trim();
+            if (ContactName) {
+                if (Contacts.length >= 7) {
+                    Contacts.shift();  
+                }
+                Contacts.push(ContactName);  
+                ContactInput.value = '';  
+                contactDisplay();  
+            }
+        }
+
+        function removeContact() {
+            Contacts.pop();  
+            contactDisplay();  
+        }
+    </script>
+
+</body>
+</html>
